@@ -1,7 +1,7 @@
 NODE_ID = "ThresholdCompare"
 NODE_NAME = "Threshold Compare"
 NODE_CATEGORY = "Utils"
-NODE_DESCRIPTION = "Compares if one value deviates from another within a threshold"
+NODE_DESCRIPTION = "Compares if one float value deviates from another within a threshold"
 
 INPUTS = [{"name": "input0", "label": "Input", "type": "any"}]
 OUTPUTS = [
