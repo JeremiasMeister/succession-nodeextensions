@@ -1,3 +1,6 @@
+# Project Succession expects a few constants to properly handle the node code. they are defined below
+
+# Begin constants
 NODE_ID = "ThresholdCompare"
 NODE_NAME = "Threshold Compare"
 NODE_CATEGORY = "Utils"
@@ -39,7 +42,9 @@ PARAMETERS = [
         "required": True
     },
 ]
+# end constants
 
+# Project Succession requires this execute method to be present. it defines the functionality of the nodes. 
 def execute(config, inputs, secrets):
     # get params
     compare = config.get("compare")
@@ -61,7 +66,9 @@ def execute(config, inputs, secrets):
         cvalue2 = compare_with + threshold
         if compare < cvalue1 or compare > cvalue2:
             output = "output1"
-    
+
+    # The return struct is properly structured into status, message and output_data which contains proper identifier, type and value for each output.
+    # optionally we can limit the outputs firing with the firing_outputs field
     return {
         "status": "success",
         "message": "Threshold Compare Output",
